@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Calendar from "../components/Calander";
 import Navbar from "../components/Navbar";
 import TimeSection from "../components/TimeSection";
