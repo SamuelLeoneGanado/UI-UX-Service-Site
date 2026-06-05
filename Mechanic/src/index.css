@@ -1,0 +1,954 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+  --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #3b3c40;
+    --border: #56595f;
+    --code-bg: #000000;
+    --accent: #000000;
+    --accent-bg: rgba(0, 0, 0, 0.15);
+    --accent-border: rgba(0, 0, 0, 0.5);
+    --social-bg: rgba(0, 0, 0, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #cbcccf;
+    --border: #858b97;
+    --code-bg: #000000;
+    --accent: #000000;
+    --accent-bg: rgba(0, 0, 0, 0.15);
+    --accent-border: rgba(0, 0, 0, 0.5);
+    --social-bg: rgba(0, 0, 0, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+
+
+
+.screen {
+  min-height: 100vh;
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+  background-color: #cbcccf;
+}
+
+.Background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.Background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/BG.avif");
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+
+.navbar {
+  display: grid;
+  grid-template-columns: 5% 20% 20% 15% 15% 25%;
+  padding: 30px;
+  font-weight:bold;
+  color: #e1e1e1;
+  background-color: #AEAEB2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar a.OMS{
+  font-size: 60px;
+  font-weight: Bold;
+  color: #ffffff;
+  text-shadow: 4px 2px #ffb300;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ffffff; 
+  transition: color 0.15s ease-in-out;    
+  transition: transform 0.15s ease-in-out; 
+  font-size: 28px; 
+  align-self: center;  
+}
+
+.navbar a:hover {
+  color: #eff0f3;
+  transform: scale(1.02);
+}
+
+.navbar button {
+  background-color: rgb(36, 189, 182);
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-right: 10px;
+  margin-left: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;  
+  transition: color 0.15s ease-in-out;     
+  font-size: 28px;  
+  font-weight:bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform 0.15s ease-in-out;
+}
+
+.navbar button:hover {
+  transform: scale(1.02);
+}
+
+.HomeLayout{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  flex:1;
+  color:black;
+}
+
+.HomeLayout h1 {
+  color:black;
+  font-family: 'Inter', sans-serif;
+  padding-left: 15%;
+  padding-top: 30%;
+  font-size: 70px;
+  line-height: 1;
+  text-align: left;
+}
+
+.HomeLayout h2 {
+  color:black;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  padding-left: 15%;
+}
+
+.HomeIconLayout{
+  display: grid;
+  grid-template-rows: 8% 25% 25% 25% 17%;
+  align-items: center;
+  justify-items: center;
+  height:100%;
+}
+
+.IconSpacing{
+  display: flex;
+}
+
+.HomeCard{
+  background-color:#d0d3da;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 150px;
+  width: 150px;
+  border-radius: 28px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease-in-out;
+  cursor: pointer;  
+}
+
+.HomeCard img {
+  max-width: 80%;
+  max-height: 80px;
+  object-fit: contain;
+  object-fit: contain;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  
+}
+
+.HomeCard p {
+  align-self: center;
+  flex:1;
+  height:100%;
+  padding-top: 15px;
+}
+
+.HomeCard:hover {
+  transform: scale(1.05);
+}
+
+.ScheduleServiceLayout{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  flex:1;
+}
+
+.ScheduleServiceInfoLayout{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  flex:1;
+}
+
+/* --- Calendar Container --- */
+.calendar-wrapper {
+  margin-left: 50px;
+  margin-top: 30px;
+  width: 90%;
+  max-width: 48rem; /* 512px */
+  border-radius: 1rem;
+  background-color: #e8eaef;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.calendar-header {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* --- Updated Scroll Area --- */
+.calendar-scroll-area {
+  max-height: 18rem; 
+  overflow-y: auto;
+  
+  /* Increase this padding to push the scrollbar further to the right */
+  padding-right: 1.5rem; 
+
+  /* Firefox support for scrollbar color */
+  scrollbar-width: thin; 
+  scrollbar-color: #a0aec0 transparent; /* thumb-color track-color */
+}
+
+/* --- WebKit Scrollbar Customization (Chrome, Safari, Edge) --- */
+
+/* 1. Target the scrollbar specifically for the scroll area */
+.calendar-scroll-area::-webkit-scrollbar {
+  width: 8px; /* Adjust thickness */
+}
+
+/* 2. The track (background) of the scrollbar */
+.calendar-scroll-area::-webkit-scrollbar-track {
+  background: transparent; 
+  /* You can add a subtle background here if you don't want it invisible, e.g., #f3f4f6 */
+}
+
+/* 3. The thumb (the part you drag) */
+.calendar-scroll-area::-webkit-scrollbar-thumb {
+  background-color: #a0aec0; /* Change this hex code to your specific desired color */
+  border-radius: 8px; /* Rounds the top and bottom of the scrollbar */
+}
+
+/* 4. Hover effect for the thumb */
+.calendar-scroll-area::-webkit-scrollbar-thumb:hover {
+  background-color: #718096; /* Slightly darker color when hovering */
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+/* --- Day Card Styles --- */
+.day-card {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.day-card:hover {
+  opacity: 0.8;
+}
+
+/* Specific state colors (Order matters for CSS specificity if chained, but we'll apply them conditionally in React) */
+.day-card-default {
+  background-color: rgba(209, 213, 219, 0.6); /* Transparent Gray */
+  color: #374151;
+}
+
+.day-card-weekend {
+  background-color: #f0e6d6; /* Subtle Orange/Tan */
+  color: #374151;
+}
+
+.day-card-today {
+  background-color: #bfdbfe; /* Light Blue */
+  color: #1e3a8a; /* Dark Blue Text */
+}
+
+.day-card-selected {
+  background-color: #3b82f6; /* Darker Blue */
+  color: #ffffff;
+}
+
+/* --- Time Section Container --- */
+.time-section-wrapper {
+  margin: 15px;
+  margin-top: 20px;
+  width: 85%;
+  height: 292px;
+  max-width: 20rem; /* Thinner than the calendar */
+  border-radius: 1rem;
+  background-color: #d8d9e6; /* The light purple-gray from your image */
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.time-section-header {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+/* --- Scroll Area Specific to Time Section --- */
+.time-scroll-container {
+  max-height: 14rem; /* Shows about 5 items before needing to scroll */
+  padding-right: 1rem; /* Space for the scrollbar we styled earlier */
+}
+
+.time-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between the time slots */
+}
+
+/* --- Time Slot Cards --- */
+.time-slot {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+  opacity: 0.8;
+}
+
+.time-slot-default {
+  background-color: #c5c6d0; /* Light gray from your image */
+  color: #374151;
+}
+
+.time-slot-selected {
+  background-color: #a3a5b3; /* Slightly darker gray for selection */
+  color: #111827;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Bottom Scroll Arrow --- */
+.scroll-arrow-indicator {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  user-select: none;
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+/* --- User Fields Container --- */
+.user-fields-wrapper {
+  margin: auto;
+  margin-top: 30px;
+  width: 70%;
+  height: 674px;
+  max-width: 24rem; /* Slightly wider to accommodate side-by-side fields */
+  border-radius: 1rem;
+  background-color: #cfd1d8; /* Gray background matching the image */
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-fields-header {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+.user-fields-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Standard gap between rows */
+}
+
+/* --- Layout Rows --- */
+.form-row {
+  display: flex;
+  width: 100%;
+}
+
+.form-row-half {
+  display: flex;
+  width: 100%;
+  gap: 0.75rem; /* Gap between the two side-by-side inputs */
+}
+
+/* Forces the side-by-side inputs to take up equal space */
+.form-row-half > * {
+  flex: 1;
+  min-width: 0; /* Prevents flex blowouts on small screens */
+}
+
+/* Creates the vertical gap seen in your image */
+.form-section-divider {
+  margin-bottom: 1.5rem; 
+}
+
+/* --- Inputs and Textareas --- */
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: #e5e7ec; /* Lighter gray for the input fields */
+  border: 2px solid transparent; /* Transparent border to reserve space for focus */
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.form-textarea {
+  resize: vertical; /* Allows the user to only resize it up and down */
+  min-height: 7rem;
+}
+
+/* The blue highlight outline from your image when an input is clicked */
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #3b82f6; /* Bright blue */
+  background-color: #f3f4f6; /* Slightly brightens the background on focus */
+}
+
+/* --- Submit Button --- */
+.submit-btn-container {
+  display: flex;
+  justify-content: flex-end; /* Pushes the button to the right */
+  margin-top: 0.5rem;
+}
+
+.submit-btn {
+  background-color: #f59e0b; /* Vibrant orange */
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #d97706; /* Slightly darker orange on hover */
+}
+
+/* --- Custom Select Dropdown --- */
+.form-select {
+  cursor: pointer;
+  appearance: none; /* Removes the default clunky browser arrow */
+  
+  /* Adds a custom, clean SVG arrow icon to the right side */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem; /* Make sure the text doesn't overlap the new arrow */
+}
+
+/* Optional: Slight color change to indicate an unselected state */
+.form-select:invalid {
+  color: #6b7280; /* Gray color for the "Select a service..." placeholder */
+}
+
+/* --- Info Boxes (Service & Booking) --- */
+.info-box-wrapper {
+  background-color: #d1d5db; /* Gray matching the image */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 40px;
+  margin-top: 20px;
+  width: 80%;
+  height: 100px;
+}
+
+.info-box-header {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 700;
+}
+
+.info-box-text {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.4;
+  text-align: center;
+  margin: auto 0; /* Centers the text vertically */
+}
+
+.schedule-content {
+  max-width: 1400px; /* Much wider than the 512px booking calendar */
+  margin: 2rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* --- Schedule Page Calendar Variant --- */
+
+/* Let the wrapper stretch to full width */
+.calendar-schedule-variant {
+  max-width: 100%; 
+}
+
+/* Decrease the viewport height to make it shorter */
+.calendar-schedule-variant .calendar-scroll-area {
+  max-height: 16rem; 
+}
+
+/* Flatten the day cards so they are rectangular rather than square */
+.calendar-schedule-variant .day-card {
+  height: 8rem; 
+  font-size: 1.1rem;
+}
+
+/* Remove the margin bottom on the month section so the grid stays tight */
+.calendar-schedule-variant .month-section {
+  margin-bottom: 3rem;
+}
+
+/* --- Bottom Info Boxes --- */
+.schedule-info-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.schedule-info-box {
+  flex: 1;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: #111827;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gray Box matching the left side of the mock-up */
+.box-gray {
+  background-color: #cfd1d8; 
+}
+
+/* Subtle Orange/Tan Box matching the weekend days */
+.box-orange {
+  background-color: #f0e6d6; 
+}
+
+.schedule-info-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.schedule-info-desc {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #374151;
+  margin: 0;
+  line-height: 1.5;
+}
+/* --- About Page Layout --- */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto; /* Keeps it centered */
+  padding: 1.5rem 2rem; /* Reduced top/bottom padding to save vertical space */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Tighter gap between header, grid, and contact block */
+  font-family: system-ui, -apple-system, sans-serif;
+  height: 100%; /* Helps it conform to the viewport */
+}
+
+.about-header-container {
+  text-align: center;
+  margin-bottom: 0.5rem; /* Tighter margin */
+}
+
+.about-title {
+  font-size: 2.25rem; /* Slightly smaller to save space */
+  color: #111827;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
+
+.about-subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* --- The Grid & Cards --- */
+.about-grid {
+  display: grid;
+  /* THIS is the magic line: 40% width for image, 60% for text */
+  grid-template-columns: 4fr 6fr; 
+  gap: 1.5rem; /* Tighter gap */
+}
+
+@media (max-width: 1000px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Stacks on smaller screens */
+  }
+}
+
+.about-card {
+  background-color: #e8eaef;
+  border-radius: 1rem;
+  padding: 1.5rem; /* Reduced from 2rem to save vertical height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* Removed width: 100% so the grid handles sizing natively */
+}
+
+.text-card {
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text nicely */
+}
+
+.text-card h2, .contact-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem; /* Tighter margin */
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.text-card p {
+  color: #374151;
+  line-height: 1.5; /* Slightly tighter line-height */
+  margin-bottom: 0.75rem; /* Tighter spacing between paragraphs */
+  font-size: 0.95rem; /* Slightly smaller text to prevent wrapping to too many lines */
+}
+
+.text-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Custom Image Placeholder --- */
+.image-placeholder-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cfd1d8;
+  /* Removed min-height and width: 70%. Let the grid stretch it naturally! */
+}
+
+.placeholder-graphic {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  opacity: 0.3;
+}
+
+.geo-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #374151;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.geo-square {
+  width: 50px;
+  height: 80px;
+  background-color: #374151;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.geo-triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid #374151;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+
+/* --- Contact Section --- */
+.contact-card {
+  background-color: #d8d9e6; 
+  text-align: center;
+  margin-top:40px;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Spreads them out nicely on one line */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.95rem; /* Slightly smaller */
+  color: #374151;
+}
+
+.contact-item strong {
+  color: #111827;
+}
+
+/* --- Locations Page Layout --- */
+.locations-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem; /* Reduced padding to save vertical space */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Tighter gap between header and cards */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.locations-header-container {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.locations-title {
+  font-size: 2.25rem; /* Slightly smaller */
+  color: #111827;
+  margin-top: 36px;
+  margin-bottom: 0.25rem;
+}
+
+.locations-subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 30px;
+}
+
+/* --- Locations Grid --- */
+.locations-grid {
+  display: grid;
+  /* Forces 3 columns on standard screens so they never stack unless needed */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Tighter gap between cards */
+}
+
+/* Mobile responsive fallback */
+@media (max-width: 900px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Location Cards --- */
+.location-card {
+  background-color: #f3f4f6;
+  border-radius: 1rem;
+  padding: 1.5rem; /* Reduced internal padding to shrink card height */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: column;
+  border-top: 6px solid #f59e0b; 
+}
+
+.location-card-header h2 {
+  margin-top: 0;
+  margin-bottom: 1rem; /* Tighter spacing */
+  font-size: 1.25rem;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Tighter spacing between lines */
+  flex-grow: 1;
+}
+
+.loc-item p {
+  margin: 0;
+  color: #374151;
+  font-size: 0.95rem; /* Slightly smaller text */
+  line-height: 1.4;
+}
+
+.loc-item strong {
+  color: #111827;
+}
+
+.feature-item p {
+  color: #d97706; /* Adjusted orange for better readability without emojis */
+}
+
+/* --- Location Button --- */
+.location-book-btn {
+  margin-top: 1.5rem; /* Tighter top margin */
+  width: 100%;
+  background-color: #d8d9e6;
+  color: #1f2937;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.location-book-btn:hover {
+  background-color: #a3a5b3;
+  color: #ffffff;
+}
