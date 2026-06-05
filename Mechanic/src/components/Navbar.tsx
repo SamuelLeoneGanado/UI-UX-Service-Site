@@ -4,13 +4,19 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <a className="OMS" href="/Home">
-          OMS
-        </a>
+        <Link to="/Home">
+          <a className="OMS">OMS</a>
+        </Link>
         <p></p>
-        <a href="/Schedule">See Our Schedule</a>
-        <a href="/About">About Us</a>
-        <a href="/Locations">Our Locations</a>
+        <Link to="/Schedule">
+          <a>See Our Schedule</a>
+        </Link>
+        <Link to="/About">
+          <a>About Us</a>
+        </Link>
+        <Link to="/Locations">
+          <a>Our Locations</a>
+        </Link>
         <Link to="/ScheduleService">
           <button>Book Now</button>
         </Link>
